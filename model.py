@@ -74,8 +74,10 @@ def compute_gradients(x, y, params, reg_lambda):
         'db': -np.sum(y[mask]) / n
     }
 
-# Step 8 - apply_update (not yet solved)
-# TODO: implement
+# Step 8 - apply_update
+def apply_update(params, grads, learning_rate):
+    # return a new params dict after one gradient-descent step on 'w' and 'b'.
+    return {key: params[key] - learning_rate * grads['d'+key] for key in params}
 
 # Step 9 - train_svm (not yet solved)
 # TODO: implement
